@@ -58,6 +58,12 @@ planned → running → done (→ reviewed) — or abandoned, with one line sayi
   through `slurm/`. Keep the interactive shell for editing, auditing, serving.
 - Add only features the owner asks for. Follow the existing plain design:
   tokens.css variables only, hairline rows, no cards or badges.
+- **Diagrams**: experiment pages and notes may embed hand-drawn inline SVG in
+  `<figure class="fig">` blocks — read `docs/figures.md` (rendered at
+  `doc.html?d=figures`) before drawing one. Token colors only; one highlight
+  per figure; `aria-label` on every svg; a pre-registration figure shows a
+  concept or hypothetical outcome and its caption says so. Empirical plots are
+  entrypoint-generated files in `results/<slug>/plots/`, never hand-drawn.
 - Code style: minimal lines, no duplication, no fallbacks or dead branches —
   fail loudly; use asserts to catch bugs early.
 

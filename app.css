@@ -51,6 +51,31 @@ a { color: var(--ink); }
 .md pre code { background: none; padding: 0; }
 .md blockquote { margin: 0.7rem 0; padding-left: 0.9rem; border-left: 2px solid var(--hairline); color: var(--muted); }
 
+/* Figures (docs/figures.md): inline SVG diagrams colored only by tokens, so they
+   follow the theme. Marks stay neutral; the one the text points at takes --highlight. */
+.fig { margin: 1.8rem 0 2.2rem; }
+.fig svg { display: block; width: 100%; height: auto; }
+.fig figcaption { margin-top: 0.5rem; font-size: 0.85rem; color: var(--muted); }
+.fig text { font-family: var(--sans); font-size: 12px; fill: var(--muted); }
+.fig .t-strong { fill: var(--ink); font-weight: 500; }
+.fig .t-hi { fill: var(--highlight-ink); font-weight: 500; }
+.fig .box { fill: var(--surface); stroke: var(--hairline); stroke-width: 1; }
+.fig .box-hi { fill: var(--highlight-wash); stroke: var(--highlight); stroke-width: 1.5; }
+.fig .group { fill: none; stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 4 3; }
+.fig .arrow { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+.fig .arrowhead { fill: var(--muted); }
+.fig .cell { fill: var(--seq-1); }
+.fig .cell-hi { fill: var(--highlight); }
+.fig .key {
+  display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px;
+  vertical-align: -1px; margin: 0 0.3rem 0 0.9rem; background: var(--seq-1);
+}
+.fig .key:first-of-type { margin-left: 0; }
+.fig .key-hi { background: var(--highlight); }
+/* a wide diagram scrolls inside its figure on a phone, never the page */
+.fig.wide { overflow-x: auto; }
+.fig.wide svg { min-width: var(--fig-min, 520px); }
+
 table { border-collapse: collapse; margin: 0.8rem 0; font-size: 0.9rem; }
 th, td { text-align: left; padding: 0.35rem 1.2rem 0.35rem 0; border-bottom: 1px solid var(--hairline); }
 th { font-weight: 600; }

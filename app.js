@@ -161,6 +161,13 @@
     });
   }
 
+  if (PAGE === "doc") {          // renders docs/<name>.md, e.g. doc.html?d=figures
+    var dname = (Q.get("d") || "").replace(/[^\w-]/g, "");
+    fetchText("docs/" + dname + ".md").then(function (md) {
+      main.innerHTML = md ? renderMD(md) : '<p class="empty">Unknown doc: ' + esc(dname) + "</p>";
+    });
+  }
+
   if (PAGE === "paper") {
     var pslug = Q.get("p");
     var p = RESOURCES.find(function (x) { return x.slug === pslug; });

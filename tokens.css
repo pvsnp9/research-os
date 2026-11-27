@@ -6,6 +6,13 @@
   --hairline: #e3e3de;
   --accent: #1a1a1a;
   --bar: #c8c8c0;
+  /* figure tokens (docs/figures.md): diagrams use only these, never raw hex */
+  --surface: #f1f1ed;
+  --highlight: #b07c00;
+  --highlight-wash: #f6edd8;
+  --highlight-ink: #7a5600;
+  --cat-1: #4477AA; --cat-2: #EE6677; --cat-3: #228833;
+  --seq-1: #e4e6e3;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --serif: Georgia, "Times New Roman", serif;
   --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -15,10 +22,14 @@
   :root:not([data-theme="light"]) {
     --bg: #161614; --ink: #e8e8e4; --muted: #8f8f88;
     --hairline: #2c2c29; --accent: #e8e8e4; --bar: #4a4a44;
+    --surface: #1e1e1c; --highlight: #d9a521; --highlight-wash: #2e2614;
+    --highlight-ink: #e3b84c; --seq-1: #2c2e2b;
   }
 }
 :root[data-theme="dark"] {
   --bg: #161614; --ink: #e8e8e4; --muted: #8f8f88;
   --hairline: #2c2c29; --accent: #e8e8e4; --bar: #4a4a44;
+  --surface: #1e1e1c; --highlight: #d9a521; --highlight-wash: #2e2614;
+  --highlight-ink: #e3b84c; --seq-1: #2c2e2b;
 }
 body { background: var(--bg); }

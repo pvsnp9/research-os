@@ -1,5 +1,6 @@
 // Minimal markdown renderer: headings, lists, fenced code, blockquotes,
-// paragraphs; inline code, bold, italics, links. No HTML passthrough.
+// paragraphs; inline code, bold, italics, links. The only HTML passed through
+// is a <figure ...>...</figure> block starting at column 0 (see docs/figures.md).
 (function () {
   function esc(s) {
     return s.replace(/[&<>"]/g, function (c) {
@@ -32,6 +33,13 @@
         var code = [];
         for (i++; i < lines.length && !/^```/.test(lines[i]); i++) code.push(lines[i]);
         out.push("<pre><code>" + esc(code.join("\n")) + "</code></pre>");
+        i++; continue;
+      }
+      if (/^<figure[\s>]/.test(ln)) {          // raw diagram block, passed through unescaped
+        flushPara(); flushList();
+        var fig = [ln];
+        while (!/<\/figure>/.test(fig[fig.length - 1]) && i + 1 < lines.length) fig.push(lines[++i]);
+        out.push(fig.join("\n"));
         i++; continue;
       }
       var h = ln.match(/^(#{1,4}) +(.*)/);

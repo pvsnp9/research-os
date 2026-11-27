@@ -3,7 +3,9 @@
 Sections up to and including "What would make us distrust a result" are written
 and committed BEFORE the run. Results stays empty until the run finishes; every
 number in it must exist in results/<slug>/metrics.json. Verdict is computed
-against Falsification, never free-typed. (Delete this paragraph when copying.)
+against Falsification, never free-typed. Where a diagram helps (the pipeline in
+"What we do", competing curves in "What we expect"), embed an inline-SVG
+`<figure class="fig">` per docs/figures.md. (Delete this paragraph when copying.)
 
 ## In short
 
