@@ -51,10 +51,4 @@ GitHub Pages: Settings → Pages → deploy from branch, `main`, `/ (root)`. The
 published site shows the last committed state; unreviewed results stay local
 until the owner reviews them (`git add -f results/<slug>/`).
 
-## Credits
-
-The web-notebook presentation (hand-edited registries, hairline design, review
-gating) is adapted from ideas in
-[Dakingrai/internal-lens-lab](https://github.com/Dakingrai/internal-lens-lab)
-and [Dakingrai/research-lab](https://github.com/Dakingrai/research-lab).
 MIT license.
