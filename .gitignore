@@ -1,0 +1,8 @@
+# Evidence stays out of git until the owner reviews it, then: git add -f results/<slug>/
+results/
+logs/*
+!logs/.gitkeep
+.env
+.venv/
+__pycache__/
+.DS_Store

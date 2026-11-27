@@ -1,0 +1,24 @@
+/* All colors and spacing come from these tokens. Never use raw hex in app.css. */
+:root {
+  --bg: #fcfcfa;
+  --ink: #1a1a1a;
+  --muted: #6b6b66;
+  --hairline: #e3e3de;
+  --accent: #1a1a1a;
+  --bar: #c8c8c0;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --measure: 46rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161614; --ink: #e8e8e4; --muted: #8f8f88;
+    --hairline: #2c2c29; --accent: #e8e8e4; --bar: #4a4a44;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161614; --ink: #e8e8e4; --muted: #8f8f88;
+  --hairline: #2c2c29; --accent: #e8e8e4; --bar: #4a4a44;
+}
+body { background: var(--bg); }
